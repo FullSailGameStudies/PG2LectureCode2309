@@ -36,8 +36,28 @@ void printInfo(const std::vector<int>& scores)
     std::cout << "size: " << scores.size() << "\tcapacity: " << scores.capacity() << "\n";
 }
 
+//some performance benefits:
+//  only a new name to an existing variable is created
+void ChangeSample(int& sampleVarAlias)
+{
+    sampleVarAlias = 10;
+}
+
+void AddGrades(std::vector<float>& courseGrades)
+{
+    srand((unsigned int)time(NULL));
+    for (size_t i = 0; i < 10; i++)
+    {
+        courseGrades.push_back(rand() % 101);
+    }
+}
+
 int main()
 {
+    int sampleInt = 5;
+    std::cout << sampleInt << "\n";
+    ChangeSample(sampleInt);
+    std::cout << sampleInt << "\n\n";
     /*
         ╔══════════════════════════════╗
         ║Parameters: Pass by Reference.║
@@ -48,6 +68,7 @@ int main()
             This is because the parameter is actually just a new name for the other variable.
     */
     std::string spider = "Spiderman";
+    std::cout << spider << "\n";
     bool isEven = postFix(spider);
     std::string evenResult = (isEven) ? "TRUE" : "FALSE";
     std::cout << spider << "\n" << "Is Even postfix? " << evenResult << "\n";
@@ -62,7 +83,12 @@ int main()
 
     */
     std::vector<float> grades;
-
+    AddGrades(grades);
+    std::cout << "  2309 PG2 Grades   \n";
+    for (auto& grade : grades)
+    {
+        std::cout << "      " << grade << "\n";
+    }
 
 
     /*

@@ -153,13 +153,13 @@ int main()
 
 
 
-    //for (size_t i = 0; i < highScores.size();)
-    //{
-    //    if (highScores[i] < 2500)
-    //        highScores.erase(highScores.begin() + i);
-    //    else
-    //        ++i;
-    //}
+    for (size_t i = 0; i < highScores.size();)
+    {
+        if (highScores[i] < 2500)
+            highScores.erase(highScores.begin() + i);
+        else
+            ++i;
+    }
 
 
     /*
