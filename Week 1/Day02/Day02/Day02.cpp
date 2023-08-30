@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include "Sample.h"
+#include <limits>
+#include "Day02.h"
 
 bool postFix(std::string& hero)
 {
@@ -53,6 +55,26 @@ void AddGrades(std::vector<float>& courseGrades)
     }
 }
 
+void CalculateStats(const std::vector<float>& courseGrades, float& min, float& max)
+{
+    min = std::numeric_limits<float>::max();//101;
+    max = std::numeric_limits<float>::min();//-1;
+    for (auto& grade : courseGrades)
+    {
+        min = std::min<float>(min, grade);
+        max = std::max<float>(max, grade);
+    }
+}
+
+void PrintGrades(const std::vector<float>& courseGrades)
+{
+    std::cout << "  2309 PG2 Grades   \n";
+    for (auto& grade : courseGrades)
+    {
+        std::cout << "      " << grade << "\n";
+    }
+}
+
 int main()
 {
     int sampleInt = 5;
@@ -85,11 +107,7 @@ int main()
     */
     std::vector<float> grades;
     AddGrades(grades);
-    std::cout << "  2309 PG2 Grades   \n";
-    for (auto& grade : grades)
-    {
-        std::cout << "      " << grade << "\n";
-    }
+    PrintGrades(grades);
 
 
     /*
@@ -121,6 +139,11 @@ int main()
             2) call the method in main and print out the min, max.
 
     */
+
+    float minGrade, maxGrade;
+    CalculateStats(grades, minGrade, maxGrade);
+    PrintGrades(grades);
+    std::cout << "Min Grade: " << minGrade << "\tMax Grade: " << maxGrade << "\n";
 
 
 
