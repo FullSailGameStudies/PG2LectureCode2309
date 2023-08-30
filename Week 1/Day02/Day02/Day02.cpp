@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Sample.h"
 
 bool postFix(std::string& hero)
 {
@@ -13,7 +14,7 @@ bool postFix(std::string& hero)
     return postFixNumber % 2 == 0;
 }
 
-float average(const std::vector<int>& scores)
+float average(const std::vector<int>& scores)//pass by value (COPY)
 {
     //scores.push_back(5); //not allowed because it is marked as const
     float sum = 0;
@@ -27,7 +28,7 @@ void print(const std::vector<int>& scores)
 {
     std::cout << "----SCORES----\n";
     int index = 1;
-    for (int score : scores)
+    for (const int& score : scores)
         std::cout << index++ << ". " << score << "\n";
 }
 
@@ -99,19 +100,24 @@ int main()
 
         This is the way you pass by reference and prevent the method from changing the variable.
     */
+
+    Sample sample;
+    int data = sample.GetSomeData();
+
     std::vector<int> highScores;
     for (int i = 0; i < 10; ++i)
         highScores.push_back(rand());
     float avg = average(highScores);
-
-
+    print(highScores);
+    std::cout << "Average score: " << avg << "\n";
 
     /*
         CHALLENGE 2:
 
             Write a method to calculate the stats on a vector of grades
             1) create a method to calculate the min, max. 
-                pass the grades vector as a const reference. Use ref parameters for min and max.
+                pass the grades vector as a const reference. 
+                Use ref parameters for min and max.
             2) call the method in main and print out the min, max.
 
     */
