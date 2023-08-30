@@ -123,8 +123,20 @@ int main()
     int data = sample.GetSomeData();
 
     std::vector<int> highScores;
+    highScores.reserve(10);
+    std::cout << "  VECTOR INFO  \n";
+    printInfo(highScores);
     for (int i = 0; i < 10; ++i)
-        highScores.push_back(rand());
+    {
+        highScores.push_back(rand()% 5000);
+        printInfo(highScores);
+    }
+    highScores.push_back(rand());
+    printInfo(highScores);
+    //highScores.clear();
+    //printInfo(highScores);
+
+
     float avg = average(highScores);
     print(highScores);
     std::cout << "Average score: " << avg << "\n";
@@ -175,12 +187,12 @@ int main()
     /*
         INTERMEDIATE LEVEL...
         a way using std::remove_if and a lambda
-    highScores.erase(
-        std::remove_if(highScores.begin(),
-            highScores.end(),
-            [](int score) { return score < 2500; }),
-        highScores.end());
     */
+    //highScores.erase(
+    //    std::remove_if(highScores.begin(),
+    //        highScores.end(),
+    //        [](int score) { return score < 2500; }),
+    //    highScores.end());
 
 
     print(highScores);
