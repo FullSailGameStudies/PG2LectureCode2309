@@ -11,6 +11,15 @@ std::string postFix(std::string fileName, int postFixNumber = 1) //postFixNumber
     return fileName + "_" + std::to_string(postFixNumber);
 }
 
+void Print(const std::vector<std::string>& names)
+{
+    std::cout << "  VECTOR OF NAMES   \n";
+    for (auto& name : names)
+    {
+        std::cout << name << "\n";
+    }
+}
+
 int main()
 {
 
@@ -79,18 +88,27 @@ int main()
         scores2.push_back(scores[i]);
 
     //2) assignment "=" operator
-    std::vector<int> scores3 = scores;
+    std::vector<int> scores3 = scores;//makes a copy
 
     //3) passing a vector to the constructor of another vector
     std::vector<int> scores4(scores);
 
 
 
+
     /*
         CHALLENGE 2:
 
-            Copy the JLA vector and add some villains to the new vector. Don't modify the original JLA vector.
+            Copy the JLA vector and add some villains to the new vector. 
+            Don't modify the original JLA vector.
     */
     std::vector<std::string> JLA = { "Batman", "Wonder Woman", "Superman", "Flash" };
-
+    std::vector<std::string> DC = JLA;
+    DC.push_back("The Joker");
+    DC.push_back("Lex Luthor");
+    DC.push_back("Bizzaro");
+    DC.push_back("Bane");
+    DC.push_back("Killer Croc");
+    Print(JLA);
+    Print(DC);
 }
