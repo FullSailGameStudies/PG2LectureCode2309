@@ -17,7 +17,12 @@ std::string toUpper(const std::string& original)
 
 void recursiveLoop(int N)
 {
-    recursiveLoop(N + 1);
+    if(N < 100)
+    {
+        std::cout << N << "\n";
+        recursiveLoop(++N);
+        std::cout << N << "\n";
+    }
 }
 
 unsigned long factorial(unsigned int N)
@@ -38,9 +43,13 @@ int main()
         All recursive methods need an exit condition, something that prevents the loop from continuing.
 
     */
+    for (int i = 0; i < 100; i++)
+    {
+
+    }
     int N = 0;
     recursiveLoop(N);
-
+    std::cout << "\n";
 
     /*
         CHALLENGE 1:
