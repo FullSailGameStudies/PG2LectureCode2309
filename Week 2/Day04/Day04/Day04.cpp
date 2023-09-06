@@ -59,7 +59,7 @@ void Bats(int i)
 			end procedure
 */
 
-void bubbleSort(std::vector<int> A)
+void bubbleSort(std::vector<std::string>& A)
 {
 	int n = A.size();
 	bool swapped;
@@ -68,7 +68,7 @@ void bubbleSort(std::vector<int> A)
 		swapped = false;
 		for (size_t i = 1; i <= n-1; i++)
 		{
-			if (A[i - 1] > A[i])
+			if (A[i - 1] < A[i])//(A[i - 1].compare(A[i]) > 0)//GREATER THAN
 			{
 				//TODO: write swap logic
 				//int temp = A[i];
@@ -159,10 +159,17 @@ int main()
 			to all uppercase/lowercase
 
 	*/
+	std::cout << "\n\n";
 	std::string s1 = "Batman", s2 = "Aquaman";
 	int compResult = _stricmp(s1.c_str(), s2.c_str());
+	if (compResult < 0) std::cout << s1 << " LESS THAN " << s2 << "\n";
+	else if (compResult == 0) std::cout << s1 << " EQUAL TO " << s2 << "\n";
+	else if (compResult > 0) std::cout << s1 << " GREATER THAN " << s2 << "\n";
 	//OR...
 	int compareResult = toUpper(s1).compare(toUpper(s2));
+	if (compareResult < 0) std::cout << s1 << " LESS THAN " << s2 << "\n";
+	else if (compareResult == 0) std::cout << s1 << " EQUAL TO " << s2 << "\n";
+	else if (compareResult > 0) std::cout << s1 << " GREATER THAN " << s2 << "\n";
 
 
 
@@ -197,6 +204,7 @@ int main()
 	*/
 	std::vector<std::string> names = { "Wonder Woman", "Superman", "Batman", "Flash", "Aquaman" };
 	//call your BubbleSort on the names vector.
+	bubbleSort(names);
 
 
 	//print the sorted vector.
