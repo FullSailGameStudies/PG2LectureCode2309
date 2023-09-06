@@ -31,6 +31,16 @@ unsigned long factorial(unsigned int N)
     return N * factorial(N - 1);
 }
 
+void Bats(int i)
+{
+    if (i < 100)
+    {
+        int j = i;
+        std::cout << (char)78 << (char)65 << ' ';
+        Bats(i + 1);
+    }
+}
+
 int main()
 {
     /*
@@ -43,10 +53,6 @@ int main()
         All recursive methods need an exit condition, something that prevents the loop from continuing.
 
     */
-    for (int i = 0; i < 100; i++)
-    {
-
-    }
     int N = 0;
     recursiveLoop(N);
     std::cout << "\n";
@@ -63,6 +69,8 @@ int main()
             }
     */
     //call Bats here.
+    int i = 0;
+    Bats(i);
 
     char c[] = { '\n', 66, 65, 84, 77, 65, 78, 33, 33 };
     for (auto ch : c) std::cout << ch;
