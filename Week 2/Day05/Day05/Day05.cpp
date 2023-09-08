@@ -116,7 +116,7 @@ int main()
 			Add students and grades to your map.
 
 	*/
-	std::vector<std::string> names{ "KC", "Kain", "Dillon", "Evan", "Alex", "Christopher", "Jerry", "Mohamad Ali"};
+	std::vector<std::string> names{ "KC", "Kain", "Dillon", "Evan", "Alex", "Christopher", "Jerry", "Mohamad Ali" };
 
 	srand(time(NULL));
 	std::map<std::string, float> grades;
@@ -182,9 +182,9 @@ int main()
 
 	*/
 	std::cout << "\n   PG2 2309   \n";
-	for (auto& [studentName,studentGrade] : grades)
+	for (auto& [studentName, studentGrade] : grades)
 	{
-		std::cout << std::setw(3) << studentGrade <<  " " << studentName << "\n";
+		std::cout << std::setw(3) << studentGrade << " " << studentName << "\n";
 	}
 
 
@@ -240,7 +240,23 @@ int main()
 			Pick any student and curve the grade (add 5) that is stored in the grades map
 
 	*/
+	std::string student = "KC";
+	auto foundStudent = grades.find(student);
+	if (foundStudent != grades.end())
+	{
+		float oldGrade = foundStudent->second;
+		grades[student] = std::min<float>(100, oldGrade + 5);
+		std::cout << student << " grade was " << oldGrade << " but is " << foundStudent->second << ". Thanks Garrett!\n";//first is the key, second is the value
+	}
+	else
+		std::cout << student << " was not found.\n";
 
+
+	auto nextStudent = grades.erase(foundStudent);
+	//if (nextStudent == grades.end())
+	//	std::cout << "Bruce never gets dropped!\n";
+	//else
+	//	std::cout << student << " was dropped.\n";
 
 
 
@@ -265,4 +281,10 @@ int main()
 			Pick any student and curve the grade (add 5) that is stored in the grades map
 
 	*/
+
+	int numberOfItemsRemoved = menu.erase("Cheeseburger Pizza");
+	if (numberOfItemsRemoved > 0)
+		std::cout << itemToFind << " was removed from the menu. \n";
+	else
+		std::cout << itemToFind << " was not found.\n";
 }
