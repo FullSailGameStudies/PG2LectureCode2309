@@ -114,8 +114,20 @@ int main()
 			Add students and grades to your map.
 
 	*/
-	std::vector<std::string> names{ "KC", "Kain", "Dillon", "Evan" };
+	std::vector<std::string> names{ "KC", "Kain", "Dillon", "Evan", "Alex", "Christopher", "Jerry", "Mohamad Ali"};
 
+	srand(time(NULL));
+	std::map<std::string, float> grades;
+	for (auto& name : names)
+	{
+		//grades[name] = rand() % 101;
+
+		auto gradeInserted = grades.insert(std::make_pair(name, rand() % 101));
+		if (gradeInserted.second)
+			std::cout << name << " was added to PG2. Good luck!\n";
+		else
+			std::cout << name << " was somehow already in the course. hmmm.\n";
+	}
 
 
 
