@@ -212,6 +212,18 @@ int main()
 		std::cout << "Dora found " << foundIter->second << " Maces\n";
 	}
 
+	std::string itemToFind = "Chicken Nugget Pizza";
+	menu[itemToFind] = 13.99F;
+	auto foundItem = menu.find(itemToFind);
+	if (foundItem != menu.end())
+	{
+		float oldPrice = foundItem->second;
+		menu[itemToFind] = oldPrice * 1.05F;
+		std::cout << itemToFind << " was " << oldPrice << " but now costs " << foundItem->second << ". Thanks Putin!\n";//first is the key, second is the value
+	}
+	else
+		std::cout << itemToFind << " was not found.\n";
+
 
 
 	/*
@@ -220,6 +232,12 @@ int main()
 			look for a specific student in the map.
 			If the student is found, print out the student's grade
 			else print out a message that the student was not found
+
+	*/
+	/*
+		CHALLENGE 6:
+
+			Pick any student and curve the grade (add 5) that is stored in the grades map
 
 	*/
 
