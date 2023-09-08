@@ -78,6 +78,21 @@ int main()
 		1) using the insert method.
 		3) using [key] = value
 	*/
+	std::map<std::string, float> menu;
+	menu["Pineapple Pizza"] = 18.99F;//adds it
+	menu["Pineapple Pizza"] = 21.99F;//overwrites the value
+	menu["Pepperoni Pizza"] = 14.99F;
+	menu["Shrimp Scallop Alfredo"] = 23.99F;
+
+	std::pair<std::string, float> menuItem = std::make_pair("Carnivore Pizza", 19.99F);
+	menuItem = std::make_pair("Pineapple Pizza", 25.99F);
+	auto wasInserted = menu.insert(menuItem);
+	if (wasInserted.second)
+		std::cout << menuItem.first << " was inserted\n";
+	else
+		std::cout << menuItem.first << " was already in the map." << (*wasInserted.first).second;//it does not OVERWRITE
+
+
 	std::map<Weapon, int> dorasBackpack;//will store the counts of each kind of weapon
 
 	//returns an iterator and a bool. 
