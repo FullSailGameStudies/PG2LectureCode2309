@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <iomanip>      // std::setw
 
 enum class Weapon
 {
@@ -180,6 +181,11 @@ int main()
 			Loop over your grades map and print each student name and grade.
 
 	*/
+	std::cout << "\n   PG2 2309   \n";
+	for (auto& [studentName,studentGrade] : grades)
+	{
+		std::cout << std::setw(3) << studentGrade <<  " " << studentName << "\n";
+	}
 
 
 
