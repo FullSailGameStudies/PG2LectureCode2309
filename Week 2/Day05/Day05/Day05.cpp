@@ -78,6 +78,7 @@ int main()
 		1) using the insert method.
 		3) using [key] = value
 	*/
+
 	std::map<std::string, float> menu;
 	menu["Pineapple Pizza"] = 18.99F;//adds it
 	menu["Pineapple Pizza"] = 21.99F;//overwrites the value
@@ -164,6 +165,13 @@ int main()
 		}
 		std::cout << val << "\n";
 	}
+
+	std::cout << "\n-*-*-Chez Fez-*-*-\n";
+	for (auto& [menuItemName, itemPrice] : menu)
+	{
+		std::cout << menuItemName << " " << itemPrice << "\n";
+	}
+	std::cout << "\n\n";
 
 
 	/*
