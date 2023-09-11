@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Car.h"
+#include "Person.h"
 
 
 /*              CLASSESS
@@ -99,8 +100,8 @@ int main()
 
         Lecture code: add a vehicleInformation method
     */
-    Car myRide;//created on the STACK
-    myRide.Year(2023);//set the field
+    Car myRide(2023, "Ford", "Mustang GT 5.0");//created on the STACK
+    //myRide.Year(2023);//set the field
 
 
     /*
@@ -157,7 +158,7 @@ int main()
         1) cannot have any return type, not even void
         2) must have the same name as the class
 
-        HINT: use the ctor code snippet to provide a default contructor
+        HINT: use the ctor code snippet to provide a default constructor
 
         Car(int year, std::string make)
         {
@@ -174,7 +175,7 @@ int main()
         CHALLENGE:
             Add a constructor to the Person class to initialize the age and name fields
     */
-
+    Person bruce(35, "Bruce Wayne");
 
 
 

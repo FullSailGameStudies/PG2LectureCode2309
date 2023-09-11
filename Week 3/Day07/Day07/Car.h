@@ -5,6 +5,19 @@
 class Car
 {
 public:
+	//ctor (constructor)
+	//Car() //default (no parameters)
+	//{
+
+	//}
+
+	Car(int year, std::string make, std::string model)
+	{
+		//year_ = year; //assign the parameter to the field
+		Year(year);
+		mMake = make;
+		_model = model;
+	}
 
 	void VehicleInformation();
 

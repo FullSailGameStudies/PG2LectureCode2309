@@ -4,6 +4,13 @@
 class Person
 {
 public:
+	Person(int age, std::string name)
+	{
+		SetAge(age);
+		_Name = name;
+	}
+
+
 	int GetAge() const { return age_; }
 	void SetAge(int age)
 	{
