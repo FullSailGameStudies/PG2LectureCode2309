@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "Car.h"
 
 
 /*              CLASSESS
@@ -98,6 +99,8 @@ int main()
 
         Lecture code: add a vehicleInformation method
     */
+    Car myRide;//created on the STACK
+    myRide.Year(2023);//set the field
 
 
     /*
@@ -136,6 +139,10 @@ int main()
         CHALLENGE:
             Add Age getter/setter to provide access to the mAge field
             Add a Name getter/setter for the mName field
+    */
+    /*
+        CHALLENGE:
+            write an ItsMyBirthday method. increment age and print out a happy message.
     */
 
 
