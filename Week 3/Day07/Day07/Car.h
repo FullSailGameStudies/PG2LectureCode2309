@@ -11,12 +11,14 @@ public:
 
 	//}
 
-	Car(int year, std::string make, std::string model)
+	Car(int year, std::string make, std::string model) : 
+		mMake(make), 
+		_model(model)
 	{
 		//year_ = year; //assign the parameter to the field
 		Year(year);
-		mMake = make;
-		_model = model;
+		//mMake = make;
+		//_model = model;
 	}
 
 	void VehicleInformation();
