@@ -176,6 +176,11 @@ int main()
             Add a constructor to the Person class to initialize the age and name fields
     */
     Person bruce(35, "Bruce Wayne");
+    Person alfred(85, "Alfred Pennyworth");
+    int age = bruce.GetAge();//setting this = bruce
+    age = alfred.GetAge();//setting this = alfred
+
+    Car::CarReport();
 
 
 

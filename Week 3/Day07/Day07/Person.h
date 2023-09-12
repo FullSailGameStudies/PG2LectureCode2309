@@ -11,7 +11,10 @@ public:
 	}
 
 
-	int GetAge() const { return age_; }
+	int GetAge() const  //there's a hidden parameter!! Person* this
+	{ 
+		return age_; //bruce->age
+	}
 	void SetAge(int age)
 	{
 		if (age >= 0 && age <= 120)
