@@ -8,6 +8,14 @@ public:
 		Weapon(range, damage), mRounds(rounds), mMagCapacity(magCap)
 	{
 	}
+
+	Pistol operator+(Pistol const& otherPistol)
+	{
+		int magCap = std::max<int>(mMagCapacity, otherPistol.mMagCapacity);
+		int rounds = std::min<int>(magCap, mRounds + otherPistol.mRounds);
+		Pistol newPistol(rounds, magCap, range(), damage());
+		return newPistol;
+	}
 private:
 	int mRounds, mMagCapacity;
 };
