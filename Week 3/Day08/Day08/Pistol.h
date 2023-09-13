@@ -16,6 +16,8 @@ public:
 		Pistol newPistol(rounds, magCap, range(), damage());
 		return newPistol;
 	}
+
+	void showMe() const override;
 private:
 	int mRounds, mMagCapacity;
 };

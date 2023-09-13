@@ -8,6 +8,7 @@
 #include "Car.h"
 #include "FlyingCar.h"
 #include "Pistol.h"
+#include <vector>
 
 
 int main()
@@ -149,6 +150,10 @@ int main()
 
 	*/
 
+	derived d2("Gotham", 5);
+	d2.print();
+
+	base b1 = d2;//creates a NEW base object and copies the pieces it needs from d2
 
 
 	/*
@@ -162,6 +167,7 @@ int main()
 
 
 	*/
+	pewpew.showMe();
 
 
 
@@ -198,11 +204,17 @@ int main()
 			use make_unique and unique_ptr to create a derived instance
 			use std::move to upcast it to a base
 	*/
-	derived der1("Gotham", 1);
-	base base1 = der1; //calls the assignment operator of base therefore you lose all the derived parts. base1 is JUST a base object.
-	der1.print();
-	std::cout << "\n";
-	base1.print();
+
+	int num = 5;
+	float bigNum = num;//implicit casting
+	num = (int)bigNum;//explicit casting
+
+
+	std::unique_ptr<base> der1 = std::make_unique<derived>("Gotham", 1);
+	//base base1 = der1; //calls the assignment operator of base therefore you lose all the derived parts. base1 is JUST a base object.
+	der1->print();
+	//std::cout << "\n";
+	//base1.print();
 
 
 
@@ -218,5 +230,17 @@ int main()
 		Loop over the vector and call showMe on each weapon.
 
 	*/
+	std::vector<std::unique_ptr<Weapon>> dorasBackpack;
+	dorasBackpack.push_back(std::make_unique<Weapon>(rand(),rand()));
+	dorasBackpack.push_back(std::make_unique<Weapon>(rand(),rand()));
+	dorasBackpack.push_back(std::make_unique<Weapon>(rand(),rand()));
+	dorasBackpack.push_back(std::make_unique<Pistol>(rand(), rand(), rand(), rand()));
+	dorasBackpack.push_back(std::make_unique<Pistol>(rand(), rand(), rand(), rand()));
+	dorasBackpack.push_back(std::make_unique<Pistol>(rand(), rand(), rand(), rand()));
+	dorasBackpack.push_back(std::make_unique<Pistol>(rand(), rand(), rand(), rand()));
+	for (auto& weapon : dorasBackpack)
+	{
+		weapon->showMe();
+	}
 }
 

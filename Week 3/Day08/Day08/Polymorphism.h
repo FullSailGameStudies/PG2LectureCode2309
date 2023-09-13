@@ -65,7 +65,7 @@ public:
 	{
 
 	}
-	void print()
+	virtual void print()
 	{
 		std::cout << "Hello base " << mNum << "\n";
 	}
@@ -78,4 +78,15 @@ private:
 public:
 	derived(std::string str, int num) : base(num), mStr(str)
 	{ }
+
+	void print() override //its an override now b/c the base is virtual
+	{
+		//fully override (don't call the base version)
+		// 
+		//   or...
+		// 
+		//extension override (call the base version)
+		base::print();
+		std::cout << "\t Hello derived " << mStr << "\n";
+	}
 };
