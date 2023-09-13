@@ -6,6 +6,8 @@
 #include "Inheritance.h"
 #include "Polymorphism.h"
 #include "Car.h"
+#include "FlyingCar.h"
+#include "Pistol.h"
 
 
 int main()
@@ -39,6 +41,7 @@ int main()
 			Lecture Code: add a FlyingCar class that derives from Car
              
     */
+	FlyingCar jetsons(5000, 3000, "Tesla", "XPlane");
 
 
 
@@ -52,6 +55,7 @@ int main()
             Add a constructor that calls the base constructor
 	
 	*/
+	Pistol pewpew(5, 10, 50, 100);
 
 
 

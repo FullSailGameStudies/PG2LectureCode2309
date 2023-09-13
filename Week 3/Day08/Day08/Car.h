@@ -1,15 +1,18 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class Car
 {
 public:
-	Car() : mMake("Ford"), mModel("A"), mModelYear(1908), mFuelLevel(0), mMaxFuelLevel(15)
-	{   }
+	//Car() : mMake("Ford"), mModel("A"), mModelYear(1908), mFuelLevel(0), mMaxFuelLevel(15)
+	//{   }
 
 	Car(int year, std::string make, std::string model)
 		: mModelYear(year), mMake(make), mModel(model), mFuelLevel(0), mMaxFuelLevel(15)
-	{	}
+	{
+		std::cout << "Car\n";
+	}
 	std::string vehicleInformation();
 
 	void refuel()
