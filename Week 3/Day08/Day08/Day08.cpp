@@ -77,17 +77,6 @@ int main()
 
 
 
-	/*
-        ╔*************╗
-        ║  CHALLENGE  ║
-        ╚*************╝
-
-			Add an OVERLOAD of the calcDamage method in the Weapon class.
-			The overload should take an int parameter called modifier
-			to increase the damage when calculating the damage.
-
-	*/
-
 
 
 
@@ -102,9 +91,22 @@ int main()
 		Lecture Code: overload the + operator in Account
 
 	*/
+	Account myBank(10);
+	myBank = myBank + 5;
 
 
 
+
+	/*
+		╔*************╗
+		║  CHALLENGE  ║
+		╚*************╝
+
+			Add an OVERLOAD of the calcDamage method in the Weapon class.
+			The overload should take an int parameter called modifier
+			to increase the damage when calculating the damage.
+
+	*/
 	/*
         ╔*************╗
         ║  CHALLENGE  ║

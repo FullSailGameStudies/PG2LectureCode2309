@@ -20,6 +20,14 @@ public:
 		mFuelLevel = mMaxFuelLevel;
 	}
 
+	void refuel(int fuelToAdd)
+	{
+		mFuelLevel = std::min<int>(fuelToAdd + mFuelLevel, mMaxFuelLevel);
+		//OR...
+		mFuelLevel += fuelToAdd;
+		if (mFuelLevel > mMaxFuelLevel) mFuelLevel = mMaxFuelLevel;
+	}
+
 	//getter (accessor)
 	int modelYear() const
 	{
