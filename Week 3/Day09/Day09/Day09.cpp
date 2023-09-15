@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "static.h"
+#include "abstract.h"
 
 /*
 Nested class
@@ -54,4 +55,8 @@ int main()
         Add a static method to the Car class that returns an instance of the Car class.
     
     */
+
+
+    Grenade frag;
+    frag.calcDamage();
 }

@@ -1,4 +1,4 @@
-// Day09.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// Day09.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -20,6 +20,21 @@ int main()
     {
         demo();
     }
+
+    /*
+        ╔══════════════════╗
+        ║  Static Members  ║
+        ╚══════════════════╝
+
+        When calling a non-static method on a class, you must use a variable of that class.
+        That's because the variable is passed in as the 'this' parameter.
+
+        Static methods do not have a 'this' parameter therefore you call them on the
+        class name itself.
+
+        That's also why static methods cannot access non-static members.
+
+    */
 
     Car myRide = Car::BuildCar(1988);
     Car::reporting();

@@ -5,7 +5,7 @@ class Enclosing
 {
 private:
 	int x;
-	
+
 	/* start of Nested class declaration */ 
 	class Nested 
 	{
@@ -15,6 +15,11 @@ private:
 							   // private members of Enclosing class
 		}
 	}; // declaration Nested class ends here
+
+	void AccessNested(Nested* n)
+	{
+		//std::cout << n->y;
+	}
 
 
 }; // declaration Enclosing class ends here

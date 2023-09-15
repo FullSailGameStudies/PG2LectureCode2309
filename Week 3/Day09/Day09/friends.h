@@ -15,6 +15,13 @@ void GraphicsEngine::Draw(Box& box)
 	}
 }
 
+//void render(Box& box)
+//{
+//	if (box.width > 0 && box.height > 0)
+//	{
+//	}
+//}
+
 class Box
 {
 private:
