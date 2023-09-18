@@ -26,6 +26,9 @@ int main()
 {
     std::cout << "Hello PG2!\n";
 
+    std::string fileName = "pg2_2309.csv";
+    std::string filePath = "C:\\temp\\2309\\";
+
     /*
 
         ╔════════════════╗
@@ -48,6 +51,25 @@ int main()
 
         Lecture code: set a filePath variable, open an output file, write some csv data to it
     */
+
+    std::string fullPath = filePath + fileName;
+
+
+    {
+        //creates the file at the full path location
+        //  IF the file already exists, it will overwrite it
+        std::ofstream outputFile(fullPath);
+        char delimiter = '|';
+        outputFile << 13 << delimiter << "Batman!" << delimiter << true << delimiter << 13.7 << delimiter << 420;
+        outputFile.close();
+    }//the file is closed when the variable goes out of scope\
+
+    {
+        std::ifstream inputFile(fullPath);
+        std::string line;
+        std::getline(inputFile, line);
+        std::cout << line << "\n";
+    }
 
 
     /*
