@@ -59,16 +59,26 @@ int main()
         //creates the file at the full path location
         //  IF the file already exists, it will overwrite it
         std::ofstream outputFile(fullPath);
-        char delimiter = '|';
-        outputFile << 13 << delimiter << "Batman!" << delimiter << true << delimiter << 13.7 << delimiter << 420;
-        outputFile.close();
+        if (outputFile.is_open())
+        {
+            char delimiter = '|';
+            outputFile << 13 << delimiter << "Batman!" << delimiter << true << delimiter << 13.7 << delimiter << 420;
+            outputFile.close();
+        }
+        else
+            std::cout << "The file (" << fullPath << ") was not opened.\n";
     }//the file is closed when the variable goes out of scope\
 
     {
         std::ifstream inputFile(fullPath);
-        std::string line;
-        std::getline(inputFile, line);
-        std::cout << line << "\n";
+        if (inputFile.is_open())
+        {
+            std::string line;
+            std::getline(inputFile, line);
+            std::cout << line << "\n";
+        }
+        else
+            std::cout << "The file (" << fullPath << ") was not opened.\n";
     }
 
 
