@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include "Superhero.h"
 
 
 
@@ -162,4 +163,34 @@ int main()
 	std::string multi = "Batman^Bruce Wayne^35#Superman^Clark Kent^25#Wonder Woman^Diana Prince^25#Aquaman^Arthur Curry^12";
 	char collectionSeparator = '#';
 	char objectSeparator = '^';
+
+	std::vector<Superhero> DC;
+	//step 1: split the string to get each hero
+	std::stringstream heroes(multi);
+	std::string hero;
+	std::cout << "\n----HEROES----\n";
+	while (std::getline(heroes, hero, collectionSeparator))
+	{
+		//step 2: split each hero string to get the hero data
+		std::stringstream heroCSV(hero);
+
+		std::string name;
+		std::getline(heroCSV, name, objectSeparator);
+
+		std::string secret;
+		std::getline(heroCSV, secret, objectSeparator);
+
+		std::string ageData;
+		std::getline(heroCSV, ageData, objectSeparator);
+		int age = std::stoi(ageData);
+
+		//step 3: add the hero to the vector
+		Superhero dcHero(name, secret, age);
+		DC.push_back(dcHero);
+	}
+
+	for (auto& super : DC)
+	{
+		super.WhoAmI();
+	}
 }
