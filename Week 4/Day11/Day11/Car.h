@@ -22,7 +22,7 @@ public:
 		std::getline(sPart, mMake, delimiter);
 		std::getline(sPart, mModel, delimiter);
 	}
-	void serialize(std::ofstream& outputFile, char delimiter)
+	void serialize(std::ostream& outputFile, char delimiter) const
 	{
 		outputFile << mModelYear << delimiter << mMake << delimiter << mModel;
 	}
